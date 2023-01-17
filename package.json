@@ -2,7 +2,7 @@
   "name": "store",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.js",
+  "main": "server.js",
   "scripts": {
     "start": "npm install;node src/server.js",
     "prettier": " prettier --write ."
