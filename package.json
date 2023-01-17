@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js",
+    "start": "npm install;node src/server.js",
     "prettier": " prettier --write ."
   },
   "keywords": [],
