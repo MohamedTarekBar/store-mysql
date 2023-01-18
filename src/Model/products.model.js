@@ -31,6 +31,12 @@ class Product {
       const result = await connect(query, [name, description, price, createdBy]);
       return await this.getProductById(result.insertId);
     } catch (error) {
+      if (error.errno == 1452) {
+        throw {
+          status: 500,
+          message: 'please provide id for user exist'
+        }
+      }
       throw error;
     }
   };

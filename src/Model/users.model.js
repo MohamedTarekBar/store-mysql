@@ -138,7 +138,7 @@ class User {
 
   getAllUsersWithProducts = async () => {
     try {
-      const query = `SELECT u.email, CONCAT('[',GROUP_CONCAT(JSON_OBJECT("name",p.name,"price",p.price)),']') As products FROM products As p LEFT JOIN users AS u ON u.id = p.created_by GROUP BY u.email`;
+      const query = `SELECT u.email, u.id ,CONCAT('[',GROUP_CONCAT(JSON_OBJECT("created_by",p.created_by,"product_id",p.id,"name",p.name,"price",p.price)),']') As products FROM products As p LEFT JOIN users AS u ON u.id = p.created_by GROUP BY u.id`;
       const up = await connect(query);
       if (up.length) {
         const userProduct = up
