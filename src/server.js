@@ -1,7 +1,7 @@
 const express = require('express');
-const config = require('./config');
+const config = require('./Config');
 const errorMiddleware = require('./Middleware/error.middleware');
-const apiRoute = require('./routes');
+const apiRoute = require('./Routes');
 const app = express();
 const port = config.port || 3000;
 app.use(express.json());
